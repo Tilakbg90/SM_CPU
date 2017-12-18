@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/DRV_A2D.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/USB_STACK/usb_hal_pic24.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/USB_STACK/usb_hal_pic24.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/USB_STACK/usb_ch9.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/CRC32.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/COMMON.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/DRV_I2C.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/COMM_SMC.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/USB_STACK/USB_DRV.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/DRV_A2D.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/USB_STACK/usb_device.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/comm_host.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/CPU_SM.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/USB_STACK/usb_descriptors.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/USB_STACK/HardwareProfile%20-%20PIC24FJ256GB210%20PIM.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/USB_STACK/usb_device.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/COMM_GSM.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/CPU_SM_MAIN.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Config_bit_setting.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/EVENTS.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/DRV_GLCD_SPI.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/INSYS_SMCPU_USB.X/nbproject/Makefile-default.mk</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/INSYS_SMCPU_USB.X/usb_device.i</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/USB_STACK/usb_function_cdc.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/USB_STACK/usb_function_cdc.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/DRV_MEM.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/USB_STACK/usb_config.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/COMM_DAC.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/DRV_I2C.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/command_proc.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/COMM_DAC.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/USB_STACK/GenericTypeDefs.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/EVENTS.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/command_proc.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/DRV_MEM.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/CRC16.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/USB_STACK/usb_device_local.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Header/COMM_SMC.h</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/EEPROM.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/COMM_GSM.c</file>
+            <file>file:/F:/Personal/SSDAC_N/SM_CPU/Software_files/root/Trunk/SMCPU/Source/DRV_RTC.c</file>
+        </group>
+    </open-files>
+</project-private>
