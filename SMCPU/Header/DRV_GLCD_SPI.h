@@ -43,8 +43,8 @@
 #define OFFSET_UNUSED           (OFFSET_SMCPU_CRC + 4)
 #define OFFSET_CRC              (OFFSET_UNUSED + 6)
 #define MAX_COMM_TIMEOUT        200                      /*updated for every 250ms*/
-#define SS_TIMEOUT              50                     /*updated for every 5ms*/
-#define TX_TIMEOUT              20                     /*updated for every 2ms*/
+#define SS_TIMEOUT              100                     /*updated for every 5ms*/
+#define TX_TIMEOUT              2                     /*updated for every 2ms*/
 /* LCD Driver States*/
 typedef enum
 			{

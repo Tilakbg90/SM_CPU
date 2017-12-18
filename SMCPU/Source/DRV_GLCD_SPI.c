@@ -135,7 +135,6 @@ void Update_GLCD_State(void)
 		case GLCD_MODULE_NOT_ACTIVE:
             if (G_ACTIVE == 1)
 			{
-                Initialise_GLCD_Driver();
                 count = 0;
                 GLCD_Info.Comm_Timeout_ms = SS_TIMEOUT; //wait for 5 ms for SS to stabilize
                 GLCD_Info.State = GLCD_SS_WAIT;
@@ -144,7 +143,6 @@ void Update_GLCD_State(void)
         case GLCD_IDLE:
             if(GLCD_Info.Comm_Timeout_ms == 0)
             {
-                Initialise_GLCD_Driver();
                 G_SPI_SS = SET_LOW;
                 count = 0;
                 GLCD_Info.State = GLCD_COMPARE_DATA;
@@ -170,33 +168,40 @@ void Update_GLCD_State(void)
 		case GLCD_TX_DATA:            
             //send 8 bytes through SPI1
             //SPI1BUF = data;
-            if(SPI1STATbits.SPIRBF==1)
-            {
-                while(!SPI1STATbits.SRXMPT)
-                {
-                    GLCD_Info.Rx_Message_Buffer[count] = (BYTE)SPI1BUF;
-                    count++;
-                }
-            }
+            if(GLCD_Info.Comm_Timeout_ms != 0)
+                break;
             while(SPI1STATbits.SPITBF == 0)//if (BF == 0)					   /* Still all Bytes are not completely transmitted */
             {
                 /* SSPBUF empty - Transmit Status, So we can Put the Next Byte */
                 SPI1BUF = GLCD_Info.Message_Buffer[GLCD_Info.Packet_index];//GLCD_Info.Packet_index; for testing
                 GLCD_Info.Packet_index++;
             }
-            GLCD_Info.Comm_Timeout_ms = TX_TIMEOUT;
+            //GLCD_Info.Comm_Timeout_ms = TX_TIMEOUT;
             GLCD_Info.State = GLCD_CM_WAIT;
             break;
         case GLCD_CM_WAIT:
-            if(GLCD_Info.Comm_Timeout_ms == 0)
+            if(SPI1STATbits.SPIRBF==1)
             {
-                GLCD_Info.State = GLCD_TX_DATA;
-            }
-            if(GLCD_Info.Packet_index >= GLCD_Info.Packet_Max_length && SPI1STATbits.SRMPT==1)
-            {
-                GLCD_Info.Comm_Timeout_ms = MAX_COMM_TIMEOUT;
-                GLCD_Info.State = GLCD_IDLE;
-                G_SPI_SS = SET_HIGH;
+                while(SPI1STATbits.SRXMPT==0)
+                {
+                    GLCD_Info.Rx_Message_Buffer[count] = (BYTE)SPI1BUF;
+                    count++;
+                }
+                if((count%8)==0)
+                {
+                    if(GLCD_Info.Packet_index >= GLCD_Info.Packet_Max_length)
+                    {
+                        GLCD_Info.Comm_Timeout_ms = MAX_COMM_TIMEOUT;
+                        GLCD_Info.State = GLCD_IDLE;
+                        G_SPI_SS = SET_HIGH;
+                    }
+                    else
+                    {
+                        GLCD_Info.Comm_Timeout_ms = TX_TIMEOUT;
+                        GLCD_Info.State = GLCD_TX_DATA;
+                    }
+
+                }
             }
             break;
         default:
@@ -255,8 +260,9 @@ void Build_packet_GLCD(void)
     //clear the buffer
     for(u_count = 0;u_count<(MAX_G_PACKET_LEN);u_count++)
     {
-        GLCD_Info.Message_Buffer[u_count] = 0;
+        GLCD_Info.Message_Buffer[u_count] = u_count;
     }
+    return;
 
     for(u_count = 0;u_count<8;u_count++) 
     {
