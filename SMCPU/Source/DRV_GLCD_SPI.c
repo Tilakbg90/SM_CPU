@@ -125,7 +125,7 @@ void Update_GLCD_State(void)
 
     if(inspect_event_done == 0)
         return;
-    if(G_ACTIVE == 0)
+    if(0)
     {
         GLCD_Info.State = GLCD_MODULE_NOT_ACTIVE;
         return;
@@ -133,7 +133,7 @@ void Update_GLCD_State(void)
 	switch (GLCD_Info.State)
 	{
 		case GLCD_MODULE_NOT_ACTIVE:
-            if (G_ACTIVE == 1)
+            if (1)
 			{
                 count = 0;
                 GLCD_Info.Comm_Timeout_ms = SS_TIMEOUT; //wait for 5 ms for SS to stabilize
@@ -255,14 +255,13 @@ void Decrement_GLCD_msTmr(void)
 **********************************************************************************/
 void Build_packet_GLCD(void)
 {
-    BYTE track,u_count,temp2;
+    BYTE track,u_count;
     wordtype_t CheckSum_G;
     //clear the buffer
     for(u_count = 0;u_count<(MAX_G_PACKET_LEN);u_count++)
     {
-        GLCD_Info.Message_Buffer[u_count] = u_count;
+        GLCD_Info.Message_Buffer[u_count] = 0;
     }
-    return;
 
     for(u_count = 0;u_count<8;u_count++) 
     {
@@ -297,8 +296,8 @@ void Build_packet_GLCD(void)
     GLCD_Info.Message_Buffer[OFFSET_UNUSED + 4] = 0xAA;
     GLCD_Info.Message_Buffer[OFFSET_UNUSED + 5] = 0xAA;
     CheckSum_G.Word = Crc16(GLCD_INFO, MAX_G_PACKET_LEN - 2);
-    GLCD_Info.Message_Buffer[OFFSET_CRC]   = CheckSum_G.Byte.Hi;
-    GLCD_Info.Message_Buffer[OFFSET_CRC + 1]   = CheckSum_G.Byte.Lo;
+    GLCD_Info.Message_Buffer[OFFSET_CRC]   = CheckSum_G.Byte.Lo;
+    GLCD_Info.Message_Buffer[OFFSET_CRC + 1]   = CheckSum_G.Byte.Hi;
 }
 /*********************************************************************************
 *File name 			:DRV_GLCD_SPI.c
