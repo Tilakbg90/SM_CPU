@@ -255,7 +255,7 @@ void Decrement_GLCD_msTmr(void)
 **********************************************************************************/
 void Build_packet_GLCD(void)
 {
-    BYTE track,u_count;
+    BYTE track,u_count,temp2;
     wordtype_t CheckSum_G;
     //clear the buffer
     for(u_count = 0;u_count<(MAX_G_PACKET_LEN);u_count++)
