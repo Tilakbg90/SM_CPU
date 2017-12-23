@@ -125,20 +125,12 @@ void Update_GLCD_State(void)
 
     if(inspect_event_done == 0)
         return;
-    if(0)
-    {
-        GLCD_Info.State = GLCD_MODULE_NOT_ACTIVE;
-        return;
-    }
 	switch (GLCD_Info.State)
 	{
 		case GLCD_MODULE_NOT_ACTIVE:
-            if (1)
-			{
-                count = 0;
-                GLCD_Info.Comm_Timeout_ms = SS_TIMEOUT; //wait for 5 ms for SS to stabilize
-                GLCD_Info.State = GLCD_SS_WAIT;
-			}
+            count = 0;
+            GLCD_Info.Comm_Timeout_ms = SS_TIMEOUT; //wait for 5 ms for SS to stabilize
+            GLCD_Info.State = GLCD_SS_WAIT;
 			break;
         case GLCD_IDLE:
             if(GLCD_Info.Comm_Timeout_ms == 0)
@@ -274,9 +266,9 @@ void Build_packet_GLCD(void)
         GLCD_Info.Message_Buffer[u_count]    = CPU1_data_GLCD[u_count + 24 - track];
         GLCD_Info.Message_Buffer[u_count + CPU1_PACKET_LEN] = CPU2_data_GLCD[u_count + 24 - track];
     }
-        GLCD_Info.Message_Buffer[u_count]    = CPU1_data_GLCD[77];                  //Message ID
-        GLCD_Info.Message_Buffer[u_count + CPU1_PACKET_LEN] = CPU2_data_GLCD[77];   //Message ID
-        u_count++;
+    GLCD_Info.Message_Buffer[u_count]    = CPU1_data_GLCD[77];                  //Message ID
+    GLCD_Info.Message_Buffer[u_count + CPU1_PACKET_LEN] = CPU2_data_GLCD[77];   //Message ID
+    u_count++;
     track = u_count;
     for(;u_count<55;u_count++)     //u_count will start from 22 to 54 //Disp Count
     {
@@ -290,11 +282,12 @@ void Build_packet_GLCD(void)
     GLCD_Info.Message_Buffer[OFFSET_UNIT_TYPE] = DAC_sysinfo.Unit_Type;
     GLCD_Info.Message_Buffer[OFFSET_SW_V] = DAC_sysinfo.SW_Version;
     Update_SMPU_data();
-    GLCD_Info.Message_Buffer[OFFSET_UNUSED + 1] = CPU1_data_GLCD[71];
-    GLCD_Info.Message_Buffer[OFFSET_UNUSED + 2] = CPU1_data_GLCD[72];
-    GLCD_Info.Message_Buffer[OFFSET_UNUSED + 3] = CPU1_data_GLCD[73];
-    GLCD_Info.Message_Buffer[OFFSET_UNUSED + 4] = 0xAA;
-    GLCD_Info.Message_Buffer[OFFSET_UNUSED + 5] = 0xAA;
+    GLCD_Info.Message_Buffer[OFFSET_COMM_DS_E_CNT] = CPU1_data_GLCD[70];
+    GLCD_Info.Message_Buffer[OFFSET_COMM_DS_E_CNT+1] = CPU1_data_GLCD[71]; 
+    GLCD_Info.Message_Buffer[OFFSET_COMM_US_E_CNT] = CPU1_data_GLCD[72];
+    GLCD_Info.Message_Buffer[OFFSET_COMM_US_E_CNT+1] = CPU1_data_GLCD[73];
+    GLCD_Info.Message_Buffer[OFFSET_UNUSED] = 0xAA;
+    GLCD_Info.Message_Buffer[OFFSET_UNUSED + 1] = 0xAA;
     CheckSum_G.Word = Crc16(GLCD_INFO, MAX_G_PACKET_LEN - 2);
     GLCD_Info.Message_Buffer[OFFSET_CRC]   = CheckSum_G.Byte.Lo;
     GLCD_Info.Message_Buffer[OFFSET_CRC + 1]   = CheckSum_G.Byte.Hi;
@@ -321,7 +314,7 @@ void Update_SMPU_data(void)
 {
     BYTE uchBuf;
     event_record_t count_record;
-    long_t S_Time, E_Time, Event_count, P_Time, SMCPU_CRC;
+    long_t S_Time, E_Time, Event_count, P_Time;
     for (uchBuf = 0; uchBuf <	EVENT_RECORD_SIZE; uchBuf++)
     {
         Event_Record_R.Byte[uchBuf] = 0;
@@ -395,12 +388,9 @@ void Update_SMPU_data(void)
     GLCD_Info.Message_Buffer[OFFSET_PRESENT_TIME + 2 ]  = P_Time.Byte.Byte3;
     GLCD_Info.Message_Buffer[OFFSET_PRESENT_TIME + 3 ]  = P_Time.Byte.Byte4;
 
-    SMCPU_CRC.LWord = (long)SMCPU_CRC_checksum;//substitute with code crc
-    GLCD_Info.Message_Buffer[OFFSET_SMCPU_CRC     ]  = SMCPU_CRC.Byte.Byte1;
-    GLCD_Info.Message_Buffer[OFFSET_SMCPU_CRC + 1 ]  = SMCPU_CRC.Byte.Byte2;
-    GLCD_Info.Message_Buffer[OFFSET_SMCPU_CRC + 2 ]  = SMCPU_CRC.Byte.Byte3;
-    GLCD_Info.Message_Buffer[OFFSET_SMCPU_CRC + 3 ]  = SMCPU_CRC.Byte.Byte4;
-    GLCD_Info.Message_Buffer[OFFSET_SMCPU_CRC + 4 ]  = Event_Logger_ID;
+    GLCD_Info.Message_Buffer[OFFSET_NW_ID]  = Event_Logger_ID;
+    GLCD_Info.Message_Buffer[OFFSET_SRC_ID] = 0;//for SMCPU
+    
 
 }
 

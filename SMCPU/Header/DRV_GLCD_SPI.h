@@ -39,9 +39,12 @@
 #define OFFSET_START_TIME       (OFFSET_EVENT_COUNT + 4)
 #define OFFSET_END_TIME         (OFFSET_START_TIME + 4)
 #define OFFSET_PRESENT_TIME     (OFFSET_END_TIME+ 4)
-#define OFFSET_SMCPU_CRC        (OFFSET_PRESENT_TIME+ 4)
-#define OFFSET_UNUSED           (OFFSET_SMCPU_CRC + 4)
-#define OFFSET_CRC              (OFFSET_UNUSED + 6)
+#define OFFSET_NW_ID            (OFFSET_PRESENT_TIME+ 4)
+#define OFFSET_SRC_ID           (OFFSET_NW_ID+1)
+#define OFFSET_COMM_DS_E_CNT    (OFFSET_SRC_ID+1)
+#define OFFSET_COMM_US_E_CNT    (OFFSET_COMM_DS_E_CNT+2)
+#define OFFSET_UNUSED           (OFFSET_COMM_US_E_CNT+2)
+#define OFFSET_CRC              (OFFSET_UNUSED + 2)
 #define MAX_COMM_TIMEOUT        200                      /*updated for every 250ms*/
 #define SS_TIMEOUT              100                     /*updated for every 5ms*/
 #define TX_TIMEOUT              2                     /*updated for every 2ms*/
