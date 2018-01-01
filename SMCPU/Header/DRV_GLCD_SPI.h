@@ -44,7 +44,8 @@
 #define OFFSET_COMM_DS_E_CNT    (OFFSET_SRC_ID+1)
 #define OFFSET_COMM_US_E_CNT    (OFFSET_COMM_DS_E_CNT+2)
 #define OFFSET_UNUSED           (OFFSET_COMM_US_E_CNT+2)
-#define OFFSET_CRC              (OFFSET_UNUSED + 2)
+#define OFFSET_CONSTANT         (OFFSET_UNUSED + 2)
+#define OFFSET_CRC              (OFFSET_CONSTANT + 2)
 #define MAX_COMM_TIMEOUT        200                      /*updated for every 250ms*/
 #define SS_TIMEOUT              100                     /*updated for every 5ms*/
 #define TX_TIMEOUT              2                     /*updated for every 2ms*/

@@ -4,5 +4,10 @@ au-misra3.lnt
 -e9018 -e9029 -e9058
 -e793 -e419 -e835
 -e970 -e9027
+-e755 -e756
+-e765
+-e714 -e768 -e769
+-e843
+-idlen(40)
 -e90** /*To remove NOTE*/
 -summary

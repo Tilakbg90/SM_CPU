@@ -286,8 +286,10 @@ void Build_packet_GLCD(void)
     GLCD_Info.Message_Buffer[OFFSET_COMM_DS_E_CNT+1] = CPU1_data_GLCD[71]; 
     GLCD_Info.Message_Buffer[OFFSET_COMM_US_E_CNT] = CPU1_data_GLCD[72];
     GLCD_Info.Message_Buffer[OFFSET_COMM_US_E_CNT+1] = CPU1_data_GLCD[73];
-    GLCD_Info.Message_Buffer[OFFSET_UNUSED] = 0xAA;
-    GLCD_Info.Message_Buffer[OFFSET_UNUSED + 1] = 0xAA;
+    GLCD_Info.Message_Buffer[OFFSET_UNUSED] = 0;
+    GLCD_Info.Message_Buffer[OFFSET_UNUSED + 1] = 0;
+    GLCD_Info.Message_Buffer[OFFSET_CONSTANT] = 0xAA;
+    GLCD_Info.Message_Buffer[OFFSET_CONSTANT + 1] = 0xAA;
     CheckSum_G.Word = Crc16(GLCD_INFO, MAX_G_PACKET_LEN - 2);
     GLCD_Info.Message_Buffer[OFFSET_CRC]   = CheckSum_G.Byte.Lo;
     GLCD_Info.Message_Buffer[OFFSET_CRC + 1]   = CheckSum_G.Byte.Hi;
