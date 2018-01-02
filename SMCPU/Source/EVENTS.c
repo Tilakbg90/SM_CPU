@@ -874,22 +874,22 @@ void Build_Event_Queue_Record_Count(BYTE uchCPU, event_id_t uchEventId)
                 case DAC_UNIT_TYPE_SF:
                     Count1.Byte.Lo = CPU1_data[53];
                     Count1.Byte.Hi = CPU1_data[53 + 1];                    
-                    Count2.Byte.Lo = CPU1_data[55];
-                    Count2.Byte.Hi = CPU1_data[55 + 1];                                        
-                    Count3.Byte.Lo = CPU1_data[61];
-                    Count3.Byte.Hi = CPU1_data[61 + 1];                    
+                    Count2.Byte.Lo = CPU1_data[61];
+                    Count2.Byte.Hi = CPU1_data[61 + 1];                                        
+                    Count3.Byte.Lo = CPU1_data[55];
+                    Count3.Byte.Hi = CPU1_data[55 + 1];                    
                     Count4.Byte.Lo = CPU1_data[63];
                     Count4.Byte.Hi = CPU1_data[63 + 1];  
                     break;
                 case DAC_UNIT_TYPE_EF:
-                    Count1.Byte.Lo = CPU1_data[45];
-                    Count1.Byte.Hi = CPU1_data[45 + 1];                    
-                    Count2.Byte.Lo = CPU1_data[47];
-                    Count2.Byte.Hi = CPU1_data[47+ 1];                                        
-                    Count3.Byte.Lo = CPU1_data[37];
-                    Count3.Byte.Hi = CPU1_data[37 + 1];                    
-                    Count4.Byte.Lo = CPU1_data[39];
-                    Count4.Byte.Hi = CPU1_data[39 + 1];  
+                    Count1.Byte.Lo = CPU1_data[37];
+                    Count1.Byte.Hi = CPU1_data[37 + 1];                    
+                    Count2.Byte.Lo = CPU1_data[45];
+                    Count2.Byte.Hi = CPU1_data[45+ 1];                                        
+                    Count3.Byte.Lo = CPU1_data[39];
+                    Count3.Byte.Hi = CPU1_data[39 + 1];                    
+                    Count4.Byte.Lo = CPU1_data[47];
+                    Count4.Byte.Hi = CPU1_data[47 + 1];  
                     break;
                 case DAC_UNIT_TYPE_CF:
                     if(uchEventId == EVENT_DS_BLOCK_CLEAR_FWD_CNT || uchEventId == EVENT_US_BLOCK_CLEAR_FWD_CNT || uchEventId == EVENT_DS_BLOCK_OCCUPIED_FWD_CNT || uchEventId == EVENT_US_BLOCK_OCCUPIED_FWD_CNT)
@@ -1056,22 +1056,22 @@ void Build_Event_Queue_Record_Count(BYTE uchCPU, event_id_t uchEventId)
                 case DAC_UNIT_TYPE_SF:
                     Count1.Byte.Lo = CPU2_data[53];
                     Count1.Byte.Hi = CPU2_data[53 + 1];                    
-                    Count2.Byte.Lo = CPU2_data[55];
-                    Count2.Byte.Hi = CPU2_data[55 + 1];                                        
-                    Count3.Byte.Lo = CPU2_data[61];
-                    Count3.Byte.Hi = CPU2_data[61 + 1];                    
+                    Count2.Byte.Lo = CPU2_data[61];
+                    Count2.Byte.Hi = CPU2_data[61 + 1];                                        
+                    Count3.Byte.Lo = CPU2_data[55];
+                    Count3.Byte.Hi = CPU2_data[55 + 1];                    
                     Count4.Byte.Lo = CPU2_data[63];
                     Count4.Byte.Hi = CPU2_data[63 + 1];  
                     break;
                 case DAC_UNIT_TYPE_EF:
-                    Count1.Byte.Lo = CPU2_data[45];
-                    Count1.Byte.Hi = CPU2_data[45 + 1];                    
-                    Count2.Byte.Lo = CPU2_data[47];
-                    Count2.Byte.Hi = CPU2_data[47+ 1];                                        
-                    Count3.Byte.Lo = CPU2_data[37];
-                    Count3.Byte.Hi = CPU2_data[37 + 1];                    
-                    Count4.Byte.Lo = CPU2_data[39];
-                    Count4.Byte.Hi = CPU2_data[39 + 1];  
+                    Count1.Byte.Lo = CPU2_data[37];
+                    Count1.Byte.Hi = CPU2_data[37 + 1];                    
+                    Count2.Byte.Lo = CPU2_data[45];
+                    Count2.Byte.Hi = CPU2_data[45+ 1];                                        
+                    Count3.Byte.Lo = CPU2_data[39];
+                    Count3.Byte.Hi = CPU2_data[39 + 1];                    
+                    Count4.Byte.Lo = CPU2_data[47];
+                    Count4.Byte.Hi = CPU2_data[47 + 1];  
                     break;
                 case DAC_UNIT_TYPE_CF:
                     if(uchEventId == EVENT_DS_BLOCK_CLEAR_FWD_CNT || uchEventId == EVENT_US_BLOCK_CLEAR_FWD_CNT || uchEventId == EVENT_DS_BLOCK_OCCUPIED_FWD_CNT || uchEventId == EVENT_US_BLOCK_OCCUPIED_FWD_CNT)

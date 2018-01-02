@@ -83,11 +83,28 @@ LDLIBSOPTIONS=
 # fixDeps replaces a bunch of sed/cat/printf statements that slow down the build
 FIXDEPS=fixDeps
 
+# The following macros may be used in the pre and post step lines
+Device=PIC24FJ256GB210
+ProjectDir="F:\Personal\Personal_GIT\SM_CPU\SMCPU\INSYS_SMCPU_USB.X"
+ConfName=default
+ImagePath="dist\default\${IMAGE_TYPE}\INSYS_SMCPU_USB.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}"
+ImageDir="dist\default\${IMAGE_TYPE}"
+ImageName="INSYS_SMCPU_USB.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}"
+ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+IsDebug="true"
+else
+IsDebug="false"
+endif
+
 .build-conf:  ${BUILD_SUBPROJECTS}
 ifneq ($(INFORMATION_MESSAGE), )
 	@echo $(INFORMATION_MESSAGE)
 endif
 	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/INSYS_SMCPU_USB.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+	@echo "--------------------------------------"
+	@echo "User defined post-build step: ["E:\Microchip\MPLABX\v3.65_R\mplab_ide\bin\hexmate.exe" --edf="E:\Microchip\MPLABX\v3.65_R\mplab_ide\dat\en_msgs.txt" ${ImagePath} -ADDRESSING=2 +-CK=0x0000-0x2ABEF@0x2ABF0w4g5p0x04C11DB7t000000 -O${ImagePath}]"
+	@"E:\Microchip\MPLABX\v3.65_R\mplab_ide\bin\hexmate.exe" --edf="E:\Microchip\MPLABX\v3.65_R\mplab_ide\dat\en_msgs.txt" ${ImagePath} -ADDRESSING=2 +-CK=0x0000-0x2ABEF@0x2ABF0w4g5p0x04C11DB7t000000 -O${ImagePath}
+	@echo "--------------------------------------"
 
 MP_PROCESSOR_OPTION=24FJ256GB210
 MP_LINKER_FILE_OPTION=,--script="linker_script.gld"

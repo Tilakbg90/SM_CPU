@@ -555,46 +555,46 @@ typedef enum{
 typedef enum
 {
             DAC_UNIT_TYPE_DE = 0,
-    /* Enumarator to define SF Unit type of DAC system */
+    /* Enumerator to define SF Unit type of DAC system */
               DAC_UNIT_TYPE_SF , // 1
 
-    /* Enumarator to define EF Unit type of DAC system */
+    /* Enumerator to define EF Unit type of DAC system */
               DAC_UNIT_TYPE_EF, // 2
 
-    /* Enumarator to define CF Unit type of DAC system*/
+    /* Enumerator to define CF Unit type of DAC system*/
               DAC_UNIT_TYPE_CF, // 3
 
-    /* Enumarator to define D3A Unit type of DAC system */
+    /* Enumerator to define D3A Unit type of DAC system */
               DAC_UNIT_TYPE_D3_A, // 4
 
-    /* Enumarator to define D3B Unit type of DAC system */
+    /* Enumerator to define D3B Unit type of DAC system */
               DAC_UNIT_TYPE_D3_B, // 5
 
-    /* Enumarator to define D3C Unit type of DAC system */
+    /* Enumerator to define D3C Unit type of DAC system */
               DAC_UNIT_TYPE_D3_C, // 6
 
-    /* Enumarator to define 3D3S-SF Unit type of DAC system */
+    /* Enumerator to define 3D3S-SF Unit type of DAC system */
               DAC_UNIT_TYPE_3D_SF, // 7
 
-    /* Enumarator to define 3D3S-EF Unit type of DAC system */
+    /* Enumerator to define 3D3S-EF Unit type of DAC system */
               DAC_UNIT_TYPE_3D_EF, // 8
                     
-    /* Enumarator to define LCWS Unit type of DAC system */
+    /* Enumerator to define LCWS Unit type of DAC system */
               DAC_UNIT_TYPE_LCWS,   // 9
 
-    /* Enumarator to define LCWS Unit type of DAC system Dual Line*/
+    /* Enumerator to define LCWS Unit type of DAC system Dual Line*/
               DAC_UNIT_TYPE_LCWS_DL,   // 10
 
-    /* Enumarator to define D3A Unit type of DAC system */
+    /* Enumerator to define D3A Unit type of DAC system */
               DAC_UNIT_TYPE_D4_A, // 11
 
-    /* Enumarator to define D3A Unit type of DAC system */
+    /* Enumerator to define D3A Unit type of DAC system */
               DAC_UNIT_TYPE_D4_B, // 12
 
-    /* Enumarator to define D3A Unit type of DAC system */
+    /* Enumerator to define D3A Unit type of DAC system */
               DAC_UNIT_TYPE_D4_C, // 13
 
-    /* Enumarator to define D3A Unit type of DAC system */
+    /* Enumerator to define D3A Unit type of DAC system */
               DAC_UNIT_TYPE_D4_D, // 14
 
 }Unit_Type_info;

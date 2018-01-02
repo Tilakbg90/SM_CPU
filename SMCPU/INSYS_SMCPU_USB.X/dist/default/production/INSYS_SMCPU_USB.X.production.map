@@ -155,7 +155,7 @@ section                    address      alignment gaps    total length  (dec)
 .bss                        0x338c                   0            0x56  (86)
 .bss                        0x33e2                   0            0x1a  (26)
 .bss                        0x33fc                   0             0x4  (4)
-_039E16C05a3db78c           0x3400                   0            0x30  (48)
+_03D4D6C05a49f774           0x3400                   0            0x30  (48)
 .bss                        0x3430                   0            0x30  (48)
 .data                       0x3460                   0            0x2c  (44)
 .bss                        0x348c                   0            0x24  (36)
@@ -2929,9 +2929,9 @@ __c30_signature
                     0x3386                  _init_delay_count
                     0x3388                  _SMCPU_CRC_checksum
 
-_039E16C05a3db78c
+_03D4D6C05a49f774
                     0x3400         0x30
- _039E16C05a3db78c
+ _03D4D6C05a49f774
                     0x3400         0x30 build/default/production/_ext/1669077864/usb_device.o
                     0x3400                  _BDT
 
@@ -4055,7 +4055,7 @@ __linked_.ivt                                     dist/default/production/INSYS_
 __linked_.reset                                   dist/default/production/INSYS_SMCPU_USB.X.production.elf
 __linked_.resv                                    dist/default/production/INSYS_SMCPU_USB.X.production.elf
 __linked_.text                                    dist/default/production/INSYS_SMCPU_USB.X.production.elf
-__linked__039E16C05a3db78c                        dist/default/production/INSYS_SMCPU_USB.X.production.elf
+__linked__03D4D6C05a49f774                        dist/default/production/INSYS_SMCPU_USB.X.production.elf
 __linked___c30_signature                          dist/default/production/INSYS_SMCPU_USB.X.production.elf
 __linked_fill$.0                                  dist/default/production/INSYS_SMCPU_USB.X.production.elf
 __memcpy_helper                                   e:/microchip/xc16/v1.31_r/bin/bin/../../lib\libpic30-elf.a(memcpy_helperda.eo)
