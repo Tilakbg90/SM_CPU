@@ -819,7 +819,7 @@ int main(void)
 			Decrement_Events_Sch_10msTmr();	/* from events.c */
             if(inspect_event_done == 0)
                 init_delay_count++;
-            if(init_delay_count == 200)
+            if(init_delay_count == 5)
                 inspect_event_done = 1;
 		}
 		if (IFS0bits.T2IF)

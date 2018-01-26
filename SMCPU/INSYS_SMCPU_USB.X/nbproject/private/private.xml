@@ -3,16 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/F:/Personal/Personal_GIT/SM_CPU/SMCPU/Source/EEPROM.c</file>
-            <file>file:/F:/Personal/Personal_GIT/SM_CPU/SMCPU/Source/COMM_DAC.c</file>
-            <file>file:/F:/Personal/Personal_GIT/SM_CPU/SMCPU/Header/COMMON.h</file>
-            <file>file:/F:/Personal/Personal_GIT/SM_CPU/SMCPU/Header/EVENTS.h</file>
-            <file>file:/F:/Personal/Personal_GIT/SM_CPU/SMCPU/Source/DRV_MEM.c</file>
-            <file>file:/F:/Personal/Personal_GIT/SM_CPU/SMCPU/Source/CPU_SM_MAIN.c</file>
-            <file>file:/F:/Personal/Personal_GIT/SM_CPU/SMCPU/Source/COMM_GSM.c</file>
-            <file>file:/F:/Personal/Personal_GIT/SM_CPU/SMCPU/Source/EVENTS.c</file>
-            <file>file:/F:/Personal/Personal_GIT/SM_CPU/SMCPU/Header/EEPROM.h</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

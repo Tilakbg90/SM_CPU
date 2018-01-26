@@ -16,7 +16,7 @@
 #include <libpic30.h>
 #include "COMMON.h"
 #include "CRC32.h"
-BYTE Prog_Val_Temp[4] = {0,0,0,0};
+BYTE Prog_Val_Temp[4*10] = {0,0,0,0};
 /*********************************************************************************
 *File name 			:crc32.c
 *Function Name		:resultType crc32(resultType remainder)
@@ -41,8 +41,8 @@ resultType crc32(resultType remainder) {
 
     while(src_addr < CHECKSUM_LOCATION) 
     {
-        src_addr = _memcpy_p2d24(&Prog_Val_Temp[0],src_addr,3);
-        for(track =0;track<4;track++)
+        src_addr = _memcpy_p2d24(&Prog_Val_Temp[0],src_addr,3*10);
+        for(track =0;track<((3*10)+1);track++)
         {
             remainder ^= ((resultType)Prog_Val_Temp[track] << (WIDTH - 8));
             for (bitp = 8; bitp > 0; bitp--) {
